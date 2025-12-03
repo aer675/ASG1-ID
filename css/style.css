@@ -31,3 +31,22 @@
     --font-body: 'Hylia Serif', serif;
     --font-deco: 'Sheikah', serif;
 }
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark); /* Set dark background */
+    color: var(--text-white);
+    font-family: var(--font-body);    /* Apply main body font */
+    overflow-x: hidden;               /* Prevent horizontal scroll */
+}
+
+a {
+    text-decoration: none; 
+    color: inherit; /* Inherit color from parent */
+}
