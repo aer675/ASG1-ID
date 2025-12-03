@@ -13,7 +13,7 @@
     font-style: normal;
 }
 
-@font-face { /* Decorative font for headings and accents */
+@font-face { /* Decorative font for decoration */
     font-family: 'Sheikah';
     src: url('fonts/sheikahserif.otf') format('opentype');
     font-weight: normal;
@@ -62,7 +62,7 @@ a {
         position: fixed;
         width: 100%;
         top: 0;
-        z-index: 1000;
+        z-index: 1000;                                       /* Ensure navbar is on top */
 }
 
 /* Logo */
