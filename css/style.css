@@ -67,7 +67,7 @@ a {
 
 /* Logo */
 .logo {
-    font-family: var(--font-title); /* Apply logo font */
+    font-family: var(--font-title); 
     font-size: 1.5rem;
     color: var(--text-gold);
     letter-spacing: 2px;
@@ -86,4 +86,9 @@ a {
     color: var(--text-white);
     letter-spacing: 1.5px;
     transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--sheikah-blue);
+    text-shadow: 0 0 5px var(--sheikah-blue);
 }
