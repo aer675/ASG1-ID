@@ -50,3 +50,17 @@ a {
     text-decoration: none; 
     color: inherit; /* Inherit color from parent */
 }
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+        background-color: rgba(0, 0, 0, 0.9);
+        border-bottom: 1px solid rgba(232, 220, 181, 0.3); /* Gold border */
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+}
