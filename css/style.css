@@ -1,0 +1,23 @@
+/* 1. The Logo/Title Font (zeldaserif.otf) */
+@font-face {
+    font-family: 'BotW Logo';
+    src: url('fonts/zeldaserif.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 2. The Body/Dialogue Font (hylianserif.otf) */
+@font-face {
+    font-family: 'Hylia Serif';
+    src: url('fonts/hylianserif.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 3. The Ancient Rune Font (sheikahserif.otf) */
+@font-face {
+    font-family: 'Sheikah';
+    src: url('fonts/sheikahserif.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
