@@ -92,3 +92,19 @@ a {
     color: var(--sheikah-blue);
     text-shadow: 0 0 5px var(--sheikah-blue);
 }
+
+/* Login Button */
+.btn-login {
+    font-family: var(--font-title);
+    font-size: 0.8rem;
+    color: var(--text-white);
+    border: 1px solid var(--text-white);
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: var(--text-white);
+    color: #000;
+    border-color: var(--text-white);
+}
