@@ -72,3 +72,18 @@ a {
     color: var(--text-gold);
     letter-spacing: 2px;
 }
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    font-family: var(--font-title); 
+    font-size: 0.9 rem;
+    color: var(--text-white);
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+}
