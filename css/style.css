@@ -64,3 +64,11 @@ a {
         top: 0;
         z-index: 1000;
 }
+
+/* Logo */
+.logo {
+    font-family: var(--font-title); /* Apply logo font */
+    font-size: 1.5rem;
+    color: var(--text-gold);
+    letter-spacing: 2px;
+}
