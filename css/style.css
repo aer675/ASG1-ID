@@ -1,21 +1,19 @@
-/* 1. The Logo/Title Font (zeldaserif.otf) */
-@font-face {
+/* Custom Fonts for The Legend of Zelda: Breath of the Wild Themed Website */
+@font-face { /* Logo/title font */
     font-family: 'BotW Logo';
     src: url('fonts/zeldaserif.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
-/* 2. The Body/Dialogue Font (hylianserif.otf) */
-@font-face {
+@font-face { /* Main body text font */
     font-family: 'Hylia Serif';
     src: url('fonts/hylianserif.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
-/* 3. The Ancient Rune Font (sheikahserif.otf) */
-@font-face {
+@font-face { /* Decorative font for headings and accents */
     font-family: 'Sheikah';
     src: url('fonts/sheikahserif.otf') format('opentype');
     font-weight: normal;
