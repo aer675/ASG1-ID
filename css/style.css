@@ -22,17 +22,17 @@
 
 /* Global Variables (Colors & Fonts) */
 :root {
-    --bg-dark: #0a0a0a;      /* Dark background color */
-    --text-gold: #e8dcb5;    /* Zelda gold color */
-    --text-white: #ffffff;   
-    --sheikah-blue: #4deeea; /* Sheikah technology accent color */
+    --bg-dark: #0a0a0a;         /* Dark background color */
+    --text-gold: #e8dcb5;       /* Zelda gold color */
+    --text-white: #ffffff;      /* White text color */
+    --sheikah-blue: #4deeea;    /* Sheikah technology accent color */
 
     --font-title: 'BotW Logo', serif;
     --font-body: 'Hylia Serif', serif;
     --font-deco: 'Sheikah', serif;
 }
 
-/* Reset and Base Styles */
+/* Reset and Body */
 * {
     margin: 0;
     padding: 0;
@@ -58,19 +58,27 @@ a {
         align-items: center;
         padding: 20px 50px;
         background-color: rgba(0, 0, 0, 0.9);
-        border-bottom: 1px solid rgba(232, 220, 181, 0.3); /* Gold border */
+        border-bottom: 1px solid rgba(232, 220, 181, 0.3); 
         position: fixed;
         width: 100%;
         top: 0;
-        z-index: 1000;                                       /* Ensure navbar is on top */
+        z-index: 1000; 
 }
 
 /* Logo */
 .logo {
     font-family: var(--font-title); 
-    font-size: 1.5rem;
+    font-size: 1.8rem;           
     color: var(--text-gold);
     letter-spacing: 2px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(197, 160, 89, 0.3); 
+    transition: 0.3s ease;
+}
+
+.logo a:hover {
+    color: var(--text-white);
+    text-shadow: 0 0 15px var(--sheikah-blue); /* Blue glow interaction */
 }
 
 /* Navigation Links */
@@ -82,7 +90,7 @@ a {
 
 .nav-links a {
     font-family: var(--font-title); 
-    font-size: 0.9 rem;
+    font-size: 0.9rem;
     color: var(--text-white);
     letter-spacing: 1.5px;
     transition: color 0.3s ease;
@@ -90,7 +98,7 @@ a {
 
 .nav-links a:hover {
     color: var(--sheikah-blue);
-    text-shadow: 0 0 5px var(--sheikah-blue);
+    text-shadow: 0 0 8px var(--sheikah-blue);
 }
 
 /* Login Button */
@@ -107,4 +115,34 @@ a {
     background-color: var(--text-white);
     color: #000;
     border-color: var(--text-white);
+}
+
+/* Game intro section */    
+.gameintro-section {
+    height: 100vh;
+    width: 100%;
+    /* Dark gradient + Your Link Image */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.8)), url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.gameintro-content {
+    margin-top: 60px;
+    z-index: 2;
+    animation: fadeIn 2s ease-in;
+}
+
+/* The Big Center Logo Image */
+.gameintro-logo {
+    width: 550px;
+    max-width: 90%;
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.8));
 }
