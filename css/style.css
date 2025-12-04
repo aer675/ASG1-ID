@@ -121,7 +121,6 @@ a {
 .gameintro-section {
     height: 100vh;
     width: 100%;
-    /* Dark gradient + Your Link Image */
     background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.8)), url('../images/link-lookingathyrule.jpg');
     background-size: cover;
     background-position: center;
@@ -193,4 +192,41 @@ a {
     color: var(--text-gold);
     text-shadow: 0 4px 10px #000;
     margin-bottom: 30px;
+}
+
+/* Interactive Sparkle Button */
+.sparkle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.memory-sparkle {
+    font-size: 4rem;
+    color: var(--text-white);
+    text-decoration: none;
+    animation: pulse 2s infinite;
+    text-shadow: 0 0 20px var(--text-gold);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.memory-sparkle:hover {
+    transform: scale(1.3) rotate(180deg);
+    color: var(--sheikah-blue);
+    text-shadow: 0 0 40px var(--sheikah-blue);
+}
+
+.sparkle-hint {
+    font-family: var(--font-body);
+    color: var(--text-gold);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.5s;
+}
+
+.sparkle-container:hover .sparkle-hint {
+    opacity: 1; /* Shows on hover */
 }
