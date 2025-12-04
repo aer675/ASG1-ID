@@ -230,3 +230,39 @@ a {
 .sparkle-container:hover .sparkle-hint {
     opacity: 1; /* Shows on hover */
 }
+
+/* Trailer Section */
+.trailer-section {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.9)), url('../images/trailer-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.trailer-text {
+    font-family: var(--font-title);
+    font-size: 2rem;
+    color: var(--text-gold);
+    text-shadow: 0 4px 10px #000;
+    margin-bottom: 30px;
+}
+
+.trailer-video {
+    width: 80%;
+    max-width: 800px;
+    border: 5px solid var(--text-gold);
+    box-shadow: 0 0 30px var(--text-gold);
+    border-radius: 10px;
+}
+
+.trailer-container iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+}
