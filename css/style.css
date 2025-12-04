@@ -247,16 +247,17 @@ a {
 }
 
 .video-container {
-    max-width: 800px;
-    margin: 0 auto;
+    width: 90%;           /* Takes up 90% of the screen width */
+    max-width: 1400px;    /* Stops it from getting too huge on giant monitors */
+    margin: 0 auto;       /* Centers it */
     border: 2px solid var(--text-gold);
-    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    box-shadow: 0 0 50px rgba(0,0,0,0.8); /* Bigger, darker shadow */
 }
 
 .video-container iframe {
     width: 100%;
-    aspect-ratio: 16 / 9;
-    display: block; /* Removes tiny gap at bottom */
+    aspect-ratio: 16 / 9; /* Keeps the widescreen shape perfectly */
+    display: block;
 }
 
 /* Footer Section */
