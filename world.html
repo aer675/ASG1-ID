@@ -1,0 +1,60 @@
+<main>
+        <section class="heroes-section">
+            <h1 class="page-title">THE HEROES OF HYRULE</h1>
+            
+            <div class="hero-card">
+                <img src="images/link-characterart.png" alt="Link" class="hero-img">
+                <div class="hero-text">
+                    <h2>LINK</h2>
+                    <p>The Hylian Champion. Awakening from a 100-year slumber, he must reclaim his lost memories and defeat Calamity Ganon.</p>
+                </div>
+            </div>
+
+            <div class="hero-card reverse">
+                <img src="images/zelda-characterart.png" alt="Zelda" class="hero-img">
+                <div class="hero-text">
+                    <h2>ZELDA</h2>
+                    <p>The Princess of Hyrule. Possessing the sacred sealing power, she has held Ganon back for a century.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider-container">
+            <span class="gold-line"></span>
+            <img src="images/icon-sheikah-white.png" class="divider-icon" alt="Sheikah Eye">
+            <span class="gold-line"></span>
+        </div>
+
+        <section class="champions-gallery">
+            <h2 class="section-heading">THE FOUR CHAMPIONS</h2>
+            <p class="section-subtext">Select a Champion to view their Sheikah Slate data.</p>
+            
+            <div class="char-row">
+                <div class="char-cutout" onclick="showChampData('mipha')">
+                    <img src="images/champion-mipha.png" alt="Mipha">
+                    <div class="char-name">MIPHA</div>
+                </div>
+
+                <div class="char-cutout" onclick="showChampData('daruk')">
+                    <img src="images/champion-daruk.png" alt="Daruk">
+                    <div class="char-name">DARUK</div>
+                </div>
+
+                <div class="char-cutout" onclick="showChampData('revali')">
+                    <img src="images/champion-revali.png" alt="Revali">
+                    <div class="char-name">REVALI</div>
+                </div>
+
+                <div class="char-cutout" onclick="showChampData('urbosa')">
+                    <img src="images/champion-urbosa.png" alt="Urbosa">
+                    <div class="char-name">URBOSA</div>
+                </div>
+            </div>
+
+            <div id="champ-info-panel" class="sheikah-panel">
+                <h3 id="panel-name">SELECT A CHAMPION</h3>
+                <div class="panel-line"></div>
+                <p id="panel-desc">Their story will appear here...</p>
+            </div>
+        </section>
+    </main>
