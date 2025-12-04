@@ -258,3 +258,40 @@ a {
     aspect-ratio: 16 / 9;
     display: block; /* Removes tiny gap at bottom */
 }
+
+/* Footer Section */
+footer {
+    background-color: #000;
+    padding: 50px 20px;
+    text-align: center;
+    border-top: 1px solid var(--text-gold);
+}
+
+.newsletter h3 {
+    font-family: var(--font-title);
+    color: var(--sheikah-blue);
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    padding: 10px;
+    width: 250px;
+    background: #222;
+    border: 1px solid #444;
+    color: white;
+}
+
+.input-group button {
+    padding: 10px 20px;
+    background: var(--text-gold);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: var(--font-title);
+}
+
+.copyright {
+    margin-top: 30px;
+    font-size: 0.8rem;
+    color: #666;
+}
