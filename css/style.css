@@ -173,9 +173,9 @@ a {
     transform: scale(1.05);
 }
 
-/* Adventure Section (Fores + Interaction) */
+/* Adventure Section (Forest + Interaction) */
 .adventure-section {
-    height: 80vh;
+    height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.9)), url('../images/fanart-mainpage.jpg');
     background-size: cover;
     background-position: center;
