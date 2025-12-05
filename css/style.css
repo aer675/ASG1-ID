@@ -581,3 +581,34 @@ footer {
     line-height: 1.5;
     margin-bottom: 30px;
 }
+
+.masonry-grid {
+    column-count: 3;        /* 3 Columns like the mockup */
+    column-gap: 20px;       /* Space between columns */
+    width: 90%;             /* Fits nicely on screen */
+    max-width: 1200px;      /* Prevents it from getting too wide */
+    margin: 0 auto;         /* CENTERS the grid on the page */
+    padding-bottom: 80px;
+}
+
+.post-card {
+    background-color: #1a1a1a;
+    border: 1px solid var(--sheikah-blue);
+    border-radius: 12px;    /* Rounded corners like your mockup */
+    overflow: hidden;
+    margin-bottom: 20px;    /* Space between items vertically */
+    break-inside: avoid;    /* Prevents cutting images in half */
+    transition: transform 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px var(--sheikah-blue);
+}
+
+/* Mobile Responsiveness (Stacks to 1 column on phones) */
+@media (max-width: 768px) {
+    .masonry-grid {
+        column-count: 1;
+    }
+}
