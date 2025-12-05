@@ -534,3 +534,36 @@ footer {
     height: auto;
     display: block;
 }
+
+.post-card {
+    background-color: #1a1a1a; 
+    border: 1px solid var(--sheikah-blue); 
+    border-radius: 8px; 
+    overflow: hidden; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; 
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px var(--sheikah-blue);
+}
+
+.post-info {
+    padding: 15px;
+    text-align: left;
+    border-top: 1px solid rgba(77, 238, 234, 0.2); 
+}
+
+.post-info h3 {
+    font-family: var(--font-title);
+    color: var(--text-gold);
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.post-info p {
+    color: #ccc;
+    font-size: 0.9rem;
+    font-style: italic;
+}
