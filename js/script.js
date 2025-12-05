@@ -33,5 +33,10 @@ function showChampData(champKey) {
 
     panel.classList.add("active");
     
+    const allChars = document.querySelectorAll('.char-cutout');
+    allChars.forEach(char => {
+        char.classList.remove('selected');
+    });
+
     panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
