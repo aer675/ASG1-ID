@@ -309,3 +309,149 @@ footer {
     50% { transform: scale(1.15); text-shadow: 0 0 30px var(--text-gold); }
     100% { transform: scale(1); text-shadow: 0 0 10px var(--text-gold); }
 }
+
+/* World Page Styles */
+.page-title {
+    font-family: var(--font-title);
+    color: var(--text-gold);
+    text-align: center;
+    font-size: 3rem;
+    padding-top: 120px;
+    margin-bottom: 50px;
+    text-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+/* --- HEROES SECTION (Link & Zelda) --- */
+.heroes-section {
+    padding: 0 10%;
+    margin-bottom: 50px;
+}
+
+.hero-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 80px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgba(232, 220, 181, 0.1); 
+}
+
+.hero-card:last-child {
+    border-bottom: none;
+}
+
+.hero-card.reverse {
+    flex-direction: row-reverse; /* Flips Zelda's layout */
+}
+
+.hero-img {
+    width: 300px; 
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(0,0,0,0.8)); /* Pop-out effect */
+    transition: transform 0.3s ease;
+}
+
+.hero-img:hover {
+    transform: scale(1.05);
+}
+
+.hero-text h2 {
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+    color: var(--sheikah-blue);
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(77, 238, 234, 0.3);
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 400px;
+    color: #ddd;
+}
+
+.divider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 50px 0;
+    opacity: 0.8;
+}
+
+.gold-line {
+    height: 1px;
+    background-color: var(--text-gold);
+    width: 200px;
+    box-shadow: 0 0 5px var(--text-gold);
+}
+
+.divider-icon {
+    width: 30px;
+    opacity: 0.8;
+}
+
+/* --- CHAMPIONS GALLERY --- */
+.champions-gallery {
+    position: relative;
+    /* Uses your specific file: sheikah-bg.jpg */
+    background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.7)), url('../images/sheikah-bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 100px 20px;
+    text-align: center;
+    border-top: 2px solid var(--text-gold);
+}
+
+.section-subtext {
+    color: #888;
+    margin-bottom: 60px;
+    font-style: italic;
+}
+
+.char-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; 
+    gap: 20px;
+    flex-wrap: wrap; 
+    margin-bottom: 50px;
+}
+
+/* Sheikah Panel (Hidden Info Panel) */
+.sheikah-panel {
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid var(--sheikah-blue);
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(77, 238, 234, 0.2);
+    
+    /* Hidden State */
+    display: none; 
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Active State (Added by JS later) */
+.sheikah-panel.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.panel-line {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--text-gold), transparent);
+    width: 60%;
+    margin: 15px auto;
+}
+
+#panel-name {
+    font-family: var(--font-title);
+    color: var(--text-gold);
+    font-size: 2rem;
+}
