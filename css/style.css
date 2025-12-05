@@ -492,3 +492,13 @@ footer {
     color: var(--text-gold);
     font-size: 2rem;
 }
+
+.char-cutout.selected img { /* Selected hero: Keep the glow */
+    filter: drop-shadow(0 0 15px var(--text-gold)); 
+    transform: scale(1.05);
+}
+
+.char-cutout.selected .char-name {
+    color: var(--text-gold);
+    opacity: 1;
+}
