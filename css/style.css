@@ -234,7 +234,9 @@ a {
 /* Trailer Section */
 .trailer-section {
     padding: 80px 20px;
-    background-color: #050505;
+    background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.7)), url('../images/sheikah-bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
     text-align: center;
     border-top: 1px solid rgba(232, 220, 181, 0.1);
 }

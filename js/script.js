@@ -1,6 +1,6 @@
-// World Page Interaction Script 
+//---World Page Interaction Script 
 
-// 1. The Champion Data "Database"
+// The Champion Data "Database"
 const championData = {
     mipha: {
         name: "MIPHA - ZORA CHAMPION",
