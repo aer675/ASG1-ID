@@ -276,6 +276,30 @@ footer {
     font-family: var(--font-title);
 }
 
+#toast-message {
+    visibility: hidden; /* Hidden by default */
+    min-width: 250px;
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text */
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed; /* Fixed position */
+    z-index: 1; /* Sit on top */
+    left: 50%;
+    bottom: 30px; /* Distance from bottom */
+    transform: translateX(-50%); /* Center it */
+    font-family: Arial, sans-serif;
+    opacity: 0;
+    transition: opacity 0.5s, bottom 0.5s;
+}
+
+#toast-message.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 50px; /* Move up slightly when showing */
+}
+
 .copyright {
     margin-top: 30px;
     font-size: 0.8rem;
