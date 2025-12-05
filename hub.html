@@ -32,64 +32,93 @@
     <main>
     </main>
 
-    <main>
+<main>
         <section class="hub-header">
             <h1 class="page-title">COMMUNITY HUB</h1>
-            <p class="section-subtext">Discover fan art, screenshots, and stories from fellow Hylians.</p>
+            <p class="section-subtext">Discover the best creations from across Hyrule.</p>
         </section>
 
-        <div class="masonry-grid">
-            <div class="masonry-grid">
+        <section class="featured-section">
+            <h2 class="section-heading">FANART OF THE DAY</h2>
             
-            <div class="post-card">
-                <img src="images/fanart-1.png" alt="Fan Art 1">
-                <div class="post-info">
-                    <h3>Just a few weeks to christmas!</h3>
-                    <p>By @HylianArtist</p>
+            <div class="featured-container">
+                <div class="featured-image">
+                    <img src="images/fanart-1.jpg" alt="Featured Art">
+                </div>
+
+                <div class="featured-info">
+                    <div class="artist-badge">FEATURED ARTIST</div>
+                    <h3>Boss Fight</h3>
+                    <p class="artist-name">By @OfficialNintendo</p>
+                    <p class="art-desc">Link Fighting WindBlight Ganon</p>
+                    
+                    <div class="featured-actions">
+                        <button class="action-btn">♥ LIKE</button>
+                        <button class="action-btn">⬇ SAVE</button>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="post-card">
-                <img src="images/fanart-2.png" alt="Fan Art 2">
-                <div class="post-info">
-                    <h3>Heart!!</h3>
-                    <p>By @SheikahTech</p>
+        <section class="posts-section">
+            <h2 class="section-heading">RECENT POSTS</h2>
+            
+            <div class="masonry-grid">
+                <div class="post-card">
+                    <img src="images/art1.jpg" alt="Fan Art 1">
+                    <div class="like-btn" onclick="toggleLike(this)">♥</div>
+                    <div class="post-info">
+                        <h3>Just a few weeks to Christmas!</h3>
+                        <p>By @HylianArtist</p>
+                    </div>
+                </div>
+
+                <div class="post-card">
+                    <img src="images/art2.jpg" alt="Fan Art 2">
+                    <div class="like-btn" onclick="toggleLike(this)">♥</div>
+                    <div class="post-info">
+                        <h3>Heart!!</h3>
+                        <p>By @SheikahTech</p>
+                    </div>
+                </div>
+
+                <div class="post-card">
+                    <img src="images/art3.jpg" alt="Fan Art 3">
+                    <div class="like-btn" onclick="toggleLike(this)">♥</div>
+                    <div class="post-info">
+                        <h3>Sunset at Hyrule</h3>
+                        <p>By @WildPhotog</p>
+                    </div>
+                </div>
+
+                <div class="post-card">
+                    <img src="images/art4.jpg" alt="Fan Art 4">
+                    <div class="like-btn" onclick="toggleLike(this)">♥</div>
+                    <div class="post-info">
+                        <h3>The Goron Hero</h3>
+                        <p>By @HeroOfTime</p>
+                    </div>
+                </div>
+
+                <div class="post-card">
+                    <img src="images/art5.jpg" alt="Fan Art 5">
+                    <div class="like-btn" onclick="toggleLike(this)">♥</div>
+                    <div class="post-info">
+                        <h3>Zelda Sketches</h3>
+                        <p>By @HestuFan</p>
+                    </div>
+                </div>
+
+                <div class="post-card">
+                    <img src="images/art6.jpg" alt="Fan Art 6">
+                    <div class="like-btn" onclick="toggleLike(this)">♥</div>
+                    <div class="post-info">
+                        <h3>The Golden Lynel</h3>
+                        <p>By @GanonMinion</p>
+                    </div>
                 </div>
             </div>
-
-            <div class="post-card">
-                <img src="images/fanart-3.png" alt="Fan Art 3">
-                <div class="post-info">
-                    <h3>Sunset at Hyrule</h3>
-                    <p>By @WildPhotog</p>
-                </div>
-            </div>
-
-            <div class="post-card">
-                <img src="images/fanart-4.png" alt="Fan Art 4">
-                <div class="post-info">
-                    <h3>Wallpaper</h3>
-                    <p>By @HeroOfTime</p>
-                </div>
-            </div>
-
-            <div class="post-card">
-                <img src="images/fanart-5.png" alt="Fan Art 5">
-                <div class="post-info">
-                    <h3>zelda sketches</h3>
-                    <p>By @HestuFan</p>
-                </div>
-            </div>
-
-            <div class="post-card">
-                <img src="images/fanart-6.png" alt="Fan Art 6">
-                <div class="post-info">
-                    <h3>The Golden Lynel</h3>
-                    <p>By @GanonMinion</p>
-                </div>
-            </div>
-
-        </div>
+        </section>
     </main>
 
 <!--Footer Section-->
