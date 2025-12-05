@@ -508,3 +508,29 @@ footer {
     color: var(--text-gold);
     opacity: 1;
 }
+
+/* Community hub */
+.hub-header {
+    text-align: center;
+    padding-top: 120px;
+    margin-bottom: 50px;
+}
+
+/* The Pinterest like Layout */
+.masonry-grid {
+    column-count: 3;
+    column-gap: 20px;
+    padding: 20px 5%;
+}
+
+.post-card {
+    break-inside: avoid;
+    margin-bottom: 20px; 
+    width: 100%;
+}
+
+.post-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
