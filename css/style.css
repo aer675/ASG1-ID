@@ -418,6 +418,41 @@ footer {
     flex-wrap: wrap; 
     margin-bottom: 50px;
 }
+.char-cutout {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: 200px;
+}
+
+.char-cutout img {
+    width: 100%;
+    height: auto;
+    /* Default: Blue tint / dimmed / Hologram effect */
+    filter: grayscale(100%) sepia(100%) hue-rotate(170deg) brightness(0.7);
+    transition: 0.4s all;
+}
+
+.char-name {
+    font-family: var(--font-title);
+    color: var(--sheikah-blue);
+    margin-top: 10px;
+    opacity: 0.5;
+    letter-spacing: 2px;
+}
+
+/* Hover Effect: Full Color & Float */
+.char-cutout:hover {
+    transform: translateY(-10px);
+}
+
+.char-cutout:hover img {
+    filter: drop-shadow(0 0 15px var(--text-gold));
+}
+
+.char-cutout:hover .char-name {
+    color: var(--text-gold);
+    opacity: 1;
+}
 
 /* Sheikah Panel (Hidden Info Panel) */
 .sheikah-panel {
