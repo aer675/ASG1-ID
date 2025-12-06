@@ -817,7 +817,7 @@ footer {
 
     .hero-card.reverse {
         flex-direction: column;
-
+    }
     .hero-text p {
         margin: 0 auto; 
     }
@@ -833,8 +833,16 @@ footer {
     }
 
     .nav-links {
-        display: none; 
-    }
+    display: flex;          /* Make it visible */
+    flex-direction: column; /* Stack links vertically */
+    position: absolute;     /* Take it out of the flow */
+    top: 60px;              /* Push it below the navbar */
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.95); /* Dark background */
+    width: 100%;            /* Full width */
+    padding: 20px;
+    text-align: center;
+}
     
     .gameintro-tagline {
         font-size: 1rem;
@@ -856,5 +864,4 @@ footer {
     .featured-container {
         flex-direction: column; 
     }
-}
 }
