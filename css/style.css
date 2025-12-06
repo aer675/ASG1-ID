@@ -694,3 +694,103 @@ footer {
 @keyframes spin {
     100% { transform: rotate(360deg); }
 }
+
+/* Login Page Styles */
+.login-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('../images/sheikah-bg.jpg');
+    background-size: cover;
+}
+
+.login-box {
+    background: rgba(10, 10, 10, 0.95);
+    border: 2px solid var(--sheikah-blue);
+    padding: 40px;
+    width: 400px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(77, 238, 234, 0.3); 
+}
+
+.login-icon {
+    width: 60px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px var(--sheikah-blue));
+}
+
+.login-box h1 {
+    font-family: var(--font-title);
+    color: var(--text-gold);
+    letter-spacing: 3px;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.login-box p {
+    color: #ccc;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: var(--sheikah-blue);
+    font-family: var(--font-title);
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    background: #222;
+    border: 1px solid #444;
+    color: white;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--text-gold);
+    box-shadow: 0 0 10px rgba(197, 160, 89, 0.3);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: var(--text-gold);
+    color: black;
+    border: none;
+    font-family: var(--font-title);
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: var(--sheikah-blue);
+    box-shadow: 0 0 15px var(--sheikah-blue);
+}
+
+.login-footer {
+    margin-top: 20px;
+    font-size: 0.8rem;
+}
+
+.login-footer a {
+    color: var(--text-gold);
+    text-decoration: underline;
+}
