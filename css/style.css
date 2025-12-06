@@ -1,81 +1,89 @@
-/*--- Custom Fonts --- */
-@font-face { /* Logo/title font */
+/* =========================================
+   1. FONTS & VARIABLES
+   ========================================= */
+/* --- Custom Fonts --- */
+@font-face {
     font-family: 'BotW Logo';
     src: url('fonts/zeldaserif.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
-@font-face { /* Main body text font */
+@font-face {
     font-family: 'Hylia Serif';
     src: url('fonts/hylianserif.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
-@font-face { /* Decorative font for decoration */
+@font-face {
     font-family: 'Sheikah';
     src: url('fonts/sheikahserif.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
-/* --- GLOBAL VARIABLES --- */
+/* --- Global Variables --- */
 :root {
-    --bg-dark: #0a0a0a;         /* Dark background color */
-    --text-gold: #e8dcb5;       /* Zelda gold color */
-    --text-white: #ffffff;      /* White text color */
-    --sheikah-blue: #4deeea;    /* Sheikah technology accent color */
+    --bg-dark: #0a0a0a;
+    --text-gold: #e8dcb5;
+    --text-white: #ffffff;
+    --sheikah-blue: #4deeea;
     --font-title: 'BotW Logo', serif;
     --font-body: 'Hylia Serif', serif;
     --font-deco: 'Sheikah', serif;
 }
 
-/* --- Global Styles --- */
+/* =========================================
+   2. GLOBAL RESETS & BASE STYLES
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
-    background-color: var(--bg-dark); /* Set dark background */
+    background-color: var(--bg-dark);
     color: var(--text-white);
-    font-family: var(--font-body);    /* Apply main body font */
-    overflow-x: hidden;               /* Prevent horizontal scroll */
-}
-a {
-    text-decoration: none; 
-    color: inherit; /* Inherit color from parent */
+    font-family: var(--font-body);
+    overflow-x: hidden;
 }
 
-/* --- NAVBAR STYLES --- */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================================
+   3. NAVBAR & NAVIGATION
+   ========================================= */
 .navbar {
     display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 50px;
-        background-color: rgba(0, 0, 0, 0.9);
-        border-bottom: 1px solid rgba(232, 220, 181, 0.3); 
-        position: fixed;
-        width: 100%;
-        top: 0;
-        z-index: 1000; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid rgba(232, 220, 181, 0.3);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
-/* --- LOGO STYLES --- */
 .logo {
-    font-family: var(--font-title); 
-    font-size: 1.8rem;           
+    font-family: var(--font-title);
+    font-size: 1.8rem;
     color: var(--text-gold);
     letter-spacing: 2px;
     font-weight: bold;
-    text-shadow: 0 0 10px rgba(197, 160, 89, 0.3); 
+    text-shadow: 0 0 10px rgba(197, 160, 89, 0.3);
     transition: 0.3s ease;
 }
+
 .logo a:hover {
     color: var(--text-white);
-    text-shadow: 0 0 15px var(--sheikah-blue); /* Blue glow interaction */
+    text-shadow: 0 0 15px var(--sheikah-blue);
 }
 
-/* --- NAV LINKS STYLES --- */
 .nav-links {
     list-style: none;
     display: flex;
@@ -83,7 +91,7 @@ a {
 }
 
 .nav-links a {
-    font-family: var(--font-title); 
+    font-family: var(--font-title);
     font-size: 0.9rem;
     color: var(--text-white);
     letter-spacing: 1.5px;
@@ -95,7 +103,25 @@ a {
     text-shadow: 0 0 8px var(--sheikah-blue);
 }
 
-/* --- LOGIN BUTTON STYLES --- */
+/* --- Hamburger Menu (Mobile Trigger) --- */
+.hamburger {
+    display: none; /* Hidden on desktop by default */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-gold);
+    transition: 0.3s;
+}
+
+/* =========================================
+   4. UI COMPONENTS (Buttons, Toasts, Inputs)
+   ========================================= */
+/* --- Buttons --- */
 .btn-login {
     font-family: var(--font-title);
     font-size: 0.8rem;
@@ -111,14 +137,60 @@ a {
     border-color: var(--text-white);
 }
 
-/* --- GAME INTRO SECTION --- */
+.cta-login-btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: var(--text-gold);
+    color: #000;
+    font-family: var(--font-title);
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s all ease;
+}
+
+.cta-login-btn:hover {
+    background-color: var(--sheikah-blue);
+    color: #000;
+    box-shadow: 0 0 15px var(--sheikah-blue);
+    transform: scale(1.05);
+}
+
+/* --- Toast Notification --- */
+#toast-message {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    font-family: Arial, sans-serif;
+    opacity: 0;
+    transition: opacity 0.5s, bottom 0.5s;
+}
+
+#toast-message.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 50px;
+}
+
+/* =========================================
+   5. PAGE: HOME / LANDING
+   ========================================= */
+/* --- Game Intro --- */
 .gameintro-section {
     height: 100vh;
     width: 100%;
     background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.8)), url('../images/link.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Parallax effect */
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -131,7 +203,6 @@ a {
     animation: fadeIn 2s ease-in;
 }
 
-/* --- THE BIG CENTER LOGO IMAGE --- */
 .gameintro-logo {
     width: 550px;
     max-width: 90%;
@@ -139,6 +210,7 @@ a {
     margin-bottom: 20px;
     filter: drop-shadow(0 10px 20px rgba(0,0,0,0.8));
 }
+
 .gameintro-tagline {
     font-family: var(--font-title);
     font-size: 1.4rem;
@@ -148,7 +220,7 @@ a {
     text-shadow: 0 2px 10px #000;
 }
 
-/* --- ADVENTURE SECTION (FOREST + INTERACTION) --- */
+/* --- Adventure Section --- */
 .adventure-section {
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.9)), url('../images/fanart-mainpage.jpg');
@@ -169,7 +241,7 @@ a {
     margin-bottom: 30px;
 }
 
-/* --- INTERACTIVE SPARKLE BUTTON --- */
+/* --- Sparkle Interaction --- */
 .sparkle-container {
     display: flex;
     flex-direction: column;
@@ -198,15 +270,15 @@ a {
     color: var(--text-gold);
     font-size: 0.9rem;
     letter-spacing: 2px;
-    opacity: 0; /* Hidden by default */
+    opacity: 0;
     transition: opacity 0.5s;
 }
 
 .sparkle-container:hover .sparkle-hint {
-    opacity: 1; /* Shows on hover */
+    opacity: 1;
 }
 
-/* --- TRAILER SECTION --- */
+/* --- Trailer Section --- */
 .trailer-section {
     padding: 80px 20px;
     background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.7)), url('../images/sheikah-bg.jpg');
@@ -224,94 +296,23 @@ a {
 }
 
 .video-container {
-    width: 90%;           /* Takes up 90% of the screen width */
-    max-width: 1400px;    /* Stops it from getting too huge on giant monitors */
-    margin: 0 auto;       /* Centers it */
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
     border: 2px solid var(--text-gold);
-    box-shadow: 0 0 50px rgba(0,0,0,0.8); /* Bigger, darker shadow */
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
 }
 
 .video-container iframe {
     width: 100%;
-    height: auto; 
-    aspect-ratio: 16 / 9; 
+    height: auto;
+    aspect-ratio: 16 / 9;
     display: block;
 }
 
-/* --- FOOTER SECTION --- */
-footer {
-    background-color: #000;
-    padding: 50px 20px;
-    text-align: center;
-    border-top: 1px solid var(--text-gold);
-}
-
-.newsletter h3 {
-    font-family: var(--font-title);
-    color: var(--sheikah-blue);
-    margin-bottom: 20px;
-}
-
-.input-group input {
-    padding: 10px;
-    width: 250px;
-    background: #222;
-    border: 1px solid #444;
-    color: white;
-}
-
-.input-group button {
-    padding: 10px 20px;
-    background: var(--text-gold);
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    font-family: var(--font-title);
-}
-
-#toast-message {
-    visibility: hidden; /* Hidden by default */
-    min-width: 250px;
-    background-color: #333; /* Dark background */
-    color: #fff; /* White text */
-    text-align: center;
-    border-radius: 2px;
-    padding: 16px;
-    position: fixed; /* Fixed position */
-    z-index: 1; /* Sit on top */
-    left: 50%;
-    bottom: 30px; /* Distance from bottom */
-    transform: translateX(-50%); /* Center it */
-    font-family: Arial, sans-serif;
-    opacity: 0;
-    transition: opacity 0.5s, bottom 0.5s;
-}
-
-#toast-message.show {
-    visibility: visible;
-    opacity: 1;
-    bottom: 50px; /* Move up slightly when showing */
-}
-
-.copyright {
-    margin-top: 30px;
-    font-size: 0.8rem;
-    color: #666;
-}
-
-/* --- ANIMATIONS --- */
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(30px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); text-shadow: 0 0 10px var(--text-gold); }
-    50% { transform: scale(1.15); text-shadow: 0 0 30px var(--text-gold); }
-    100% { transform: scale(1); text-shadow: 0 0 10px var(--text-gold); }
-}
-
-/* --- WORLD PAGE STYLES --- */
+/* =========================================
+   6. PAGE: WORLD / CHARACTERS
+   ========================================= */
 .page-title {
     font-family: var(--font-title);
     color: var(--text-gold);
@@ -322,7 +323,7 @@ footer {
     text-shadow: 0 0 20px rgba(0,0,0,0.8);
 }
 
-/* --- HEROES SECTION (Link & Zelda) --- */
+/* --- Heroes (Link & Zelda) --- */
 .heroes-section {
     padding: 0 10%;
     margin-bottom: 50px;
@@ -335,7 +336,7 @@ footer {
     gap: 50px;
     margin-bottom: 80px;
     padding-bottom: 50px;
-    border-bottom: 1px solid rgba(232, 220, 181, 0.1); 
+    border-bottom: 1px solid rgba(232, 220, 181, 0.1);
 }
 
 .hero-card:last-child {
@@ -343,13 +344,13 @@ footer {
 }
 
 .hero-card.reverse {
-    flex-direction: row-reverse; /* Flips Zelda's layout */
+    flex-direction: row-reverse;
 }
 
 .hero-img {
-    width: 300px; 
+    width: 300px;
     height: auto;
-    filter: drop-shadow(0 0 20px rgba(0,0,0,0.8)); /* Pop-out effect */
+    filter: drop-shadow(0 0 20px rgba(0,0,0,0.8));
     transition: transform 0.3s ease;
 }
 
@@ -372,6 +373,7 @@ footer {
     color: #ddd;
 }
 
+/* --- Divider --- */
 .divider-container {
     display: flex;
     align-items: center;
@@ -393,7 +395,7 @@ footer {
     opacity: 0.8;
 }
 
-/* --- CHAMPIONS GALLERY --- */
+/* --- Champions Gallery --- */
 .champions-gallery {
     position: relative;
     background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.7)), url('../images/sheikah-bg.jpg');
@@ -413,11 +415,12 @@ footer {
 .char-row {
     display: flex;
     justify-content: center;
-    align-items: flex-end; 
+    align-items: flex-end;
     gap: 20px;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     margin-bottom: 50px;
 }
+
 .char-cutout {
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -452,7 +455,17 @@ footer {
     opacity: 1;
 }
 
-/* --- SHEIKAH PANEL (HIDDEN INFO PANEL) --- */
+.char-cutout.selected img {
+    filter: drop-shadow(0 0 15px var(--text-gold));
+    transform: scale(1.05);
+}
+
+.char-cutout.selected .char-name {
+    color: var(--text-gold);
+    opacity: 1;
+}
+
+/* --- Sheikah Panel (Hidden Info) --- */
 .sheikah-panel {
     background: rgba(0, 0, 0, 0.9);
     border: 1px solid var(--sheikah-blue);
@@ -461,9 +474,8 @@ footer {
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 0 30px rgba(77, 238, 234, 0.2);
-    
     /* Hidden State */
-    display: none; 
+    display: none;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -488,23 +500,16 @@ footer {
     font-size: 2rem;
 }
 
-.char-cutout.selected img { /* Selected hero: Keep the glow */
-    filter: drop-shadow(0 0 15px var(--text-gold)); 
-    transform: scale(1.05);
-}
-
-.char-cutout.selected .char-name {
-    color: var(--text-gold);
-    opacity: 1;
-}
-
-/* --- COMMUNITY HUB STYLES --- */
+/* =========================================
+   7. PAGE: COMMUNITY HUB
+   ========================================= */
 .hub-header {
     text-align: center;
     padding-top: 120px;
     margin-bottom: 50px;
 }
 
+/* --- Featured Artist --- */
 .featured-section {
     padding: 0 10% 50px 10%;
     margin-bottom: 50px;
@@ -517,11 +522,11 @@ footer {
     border: 1px solid var(--text-gold);
     border-radius: 4px;
     overflow: hidden;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 
 .featured-image {
-    flex: 2; 
+    flex: 2;
     min-width: 300px;
 }
 
@@ -531,8 +536,9 @@ footer {
     object-fit: cover;
     display: block;
 }
+
 .featured-info {
-    flex: 1; 
+    flex: 1;
     padding: 40px;
     display: flex;
     flex-direction: column;
@@ -571,22 +577,23 @@ footer {
     margin-bottom: 30px;
 }
 
+/* --- Masonry Grid --- */
 .masonry-grid {
-    column-count: 3;        /* 3 Columns like the mockup */
-    column-gap: 20px;       /* Space between columns */
-    width: 90%;             /* Fits nicely on screen */
-    max-width: 1200px;      /* Prevents it from getting too wide */
-    margin: 0 auto;         /* CENTERS the grid on the page */
+    column-count: 3;
+    column-gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding-bottom: 80px;
 }
 
 .post-card {
     background-color: #1a1a1a;
     border: 1px solid var(--sheikah-blue);
-    border-radius: 12px;    
+    border-radius: 12px;
     overflow: hidden;
-    margin-bottom: 20px;    /* Space between items vertically */
-    break-inside: avoid;    /* Prevents cutting images in half */
+    margin-bottom: 20px;
+    break-inside: avoid;
     transition: transform 0.3s ease;
 }
 
@@ -595,19 +602,11 @@ footer {
     box-shadow: 0 0 20px var(--sheikah-blue);
 }
 
-/* Mobile Responsiveness (Stacks to 1 column on phones) */
-@media (max-width: 768px) {
-    .masonry-grid {
-        column-count: 1;
-    }
-}
-
 .login-cta-container {
     text-align: center;
     padding: 40px 20px;
-    margin: 50px auto 80px auto; /* Spacing from grid and footer */
+    margin: 50px auto 80px auto;
     max-width: 600px;
-    
     background-color: #111;
     border: 1px solid var(--text-gold);
     border-radius: 4px;
@@ -622,68 +621,9 @@ footer {
     letter-spacing: 2px;
 }
 
-.cta-login-btn {
-    display: inline-block;
-    padding: 10px 30px;
-    background-color: var(--text-gold);
-    color: #000;
-    font-family: var(--font-title);
-    font-weight: bold;
-    text-decoration: none;
-    transition: 0.3s all ease;
-}
-
-.cta-login-btn:hover {
-    background-color: var(--sheikah-blue);
-    color: #000;
-    box-shadow: 0 0 15px var(--sheikah-blue);
-    transform: scale(1.05);
-}
-
-/* --- MAINTENANCE PAGE STYLES --- */
-.maintenance-section {
-    height: 80vh; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
-}
-
-.maintenance-box h1 {
-    font-family: var(--font-title);
-    color: var(--text-gold);
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
-}
-
-.maintenance-box p {
-    font-size: 1.2rem;
-    color: #ccc;
-}
-
-.maintenance-icon {
-    width: 80px;
-    margin-bottom: 30px;
-    opacity: 0.8;
-}
-
-.rotating {
-    animation: spin 4s linear infinite;
-}
-
-.small-text {
-    font-size: 0.9rem !important;
-    color: var(--sheikah-blue) !important;
-    margin-bottom: 40px;
-}
-
-@keyframes spin {
-    100% { transform: rotate(360deg); }
-}
-
-/* --- LOGIN PAGE STYLES --- */
+/* =========================================
+   8. PAGE: LOGIN
+   ========================================= */
 .login-section {
     height: 100vh;
     display: flex;
@@ -700,7 +640,7 @@ footer {
     width: 400px;
     text-align: center;
     border-radius: 8px;
-    box-shadow: 0 0 30px rgba(77, 238, 234, 0.3); 
+    box-shadow: 0 0 30px rgba(77, 238, 234, 0.3);
 }
 
 .login-icon {
@@ -783,18 +723,120 @@ footer {
     text-decoration: underline;
 }
 
-/* --- RESPONSIVE ADJUSTMENTS --- */
+/* =========================================
+   9. PAGE: MAINTENANCE
+   ========================================= */
+.maintenance-section {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+}
+
+.maintenance-box h1 {
+    font-family: var(--font-title);
+    color: var(--text-gold);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.maintenance-box p {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+.maintenance-icon {
+    width: 80px;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.small-text {
+    font-size: 0.9rem !important;
+    color: var(--sheikah-blue) !important;
+    margin-bottom: 40px;
+}
+
+/* =========================================
+   10. FOOTER SECTION
+   ========================================= */
+footer {
+    background-color: #000;
+    padding: 50px 20px;
+    text-align: center;
+    border-top: 1px solid var(--text-gold);
+}
+
+.newsletter h3 {
+    font-family: var(--font-title);
+    color: var(--sheikah-blue);
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    padding: 10px;
+    width: 250px;
+    background: #222;
+    border: 1px solid #444;
+    color: white;
+}
+
+.input-group button {
+    padding: 10px 20px;
+    background: var(--text-gold);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: var(--font-title);
+}
+
+.copyright {
+    margin-top: 30px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* =========================================
+   11. ANIMATIONS (Keyframes)
+   ========================================= */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); text-shadow: 0 0 10px var(--text-gold); }
+    50% { transform: scale(1.15); text-shadow: 0 0 30px var(--text-gold); }
+    100% { transform: scale(1); text-shadow: 0 0 10px var(--text-gold); }
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+.rotating {
+    animation: spin 4s linear infinite;
+}
+
+/* =========================================
+   12. MEDIA QUERIES (Responsiveness)
+   ========================================= */
+
+/* --- Tablet (Max 1024px) --- */
 @media (max-width: 1024px) {
     .navbar {
         padding: 15px 20px;
     }
     
     .nav-links {
-        gap: 20px; 
+        gap: 20px;
     }
     
     .nav-links a {
-        font-size: 0.8rem; 
+        font-size: 0.8rem;
     }
 
     .hero-card {
@@ -806,37 +848,64 @@ footer {
     .hero-card.reverse {
         flex-direction: column;
     }
+
     .hero-text p {
-        margin: 0 auto; 
+        margin: 0 auto;
     }
 
     .gameintro-section {
-        background-position: center center; 
+        background-position: center center;
     }
 }
 
+/* --- Mobile (Max 768px) --- */
 @media (max-width: 768px) {
+    /* Navbar & Hamburger Logic */
     .logo a {
         font-size: 1.4rem;
     }
 
+    .hamburger {
+        display: flex;
+        z-index: 2000;
+    }
+
     .nav-links {
-    display: flex;          /* Make it visible */
-    flex-direction: column; /* Stack links vertically */
-    position: absolute;     /* Take it out of the flow */
-    top: 60px;              /* Push it below the navbar */
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.95); /* Dark background */
-    width: 100%;            /* Full width */
-    padding: 20px;
-    text-align: center;
-}
-    
+        position: fixed;
+        right: -100%; /* Hidden off-screen by default */
+        top: 60px;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        transition: 0.3s ease-in-out;
+        border-top: 1px solid var(--text-gold);
+        /* Overriding flex default from desktop */
+        display: flex; 
+    }
+
+    .nav-links.active {
+        right: 0; /* Slide in */
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+    }
+
+    .auth-buttons { 
+        margin-right: 15px; 
+    }
+
+    /* Home Page Adjustments */
     .gameintro-tagline {
         font-size: 1rem;
         letter-spacing: 2px;
     }
 
+    /* World Page Adjustments */
     .char-row {
         gap: 40px;
     }
@@ -845,68 +914,16 @@ footer {
         width: 150px;
     }
 
+    /* Community Hub Adjustments */
     .masonry-grid {
-        column-count: 1; 
+        column-count: 1;
     }
     
     .featured-container {
-        flex-direction: column; 
+        flex-direction: column;
     }
-}
-
-/* --- HAMBURGER MENU STYLES --- */
-/* Default: Hide Hamburger on Desktop */
-.hamburger {
-    display: none;
-    cursor: pointer;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.bar {
-    width: 25px;
-    height: 3px;
-    background-color: var(--text-gold);
-    transition: 0.3s;
-}
-
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-        z-index: 2000;
-    }
-
-    .nav-links {
-        position: fixed;
-        right: -100%; 
-        top: 60px; 
-        width: 100%;
-        height: 100vh; 
-        background-color: rgba(0, 0, 0, 0.95); 
-        flex-direction: column; 
-        align-items: center;
-        justify-content: center;
-        gap: 40px;
-        transition: 0.3s ease-in-out; 
-        border-top: 1px solid var(--text-gold);
-    }
-
-    .nav-links.active {
-        right: 0; 
-        display: flex;
-    }
-
-    .nav-links a {
-        font-size: 1.5rem; 
-    }
-
-    .logo a { font-size: 1.2rem; }
-    .auth-buttons { margin-right: 15px; } 
     
-    .gameintro-tagline { font-size: 1rem; }
-    .char-row { gap: 40px; }
-    .char-cutout { width: 150px; }
-    .masonry-grid { column-count: 1; }
-    .featured-container { flex-direction: column; }
-    .featured-image { min-height: 200px; }
+    .featured-image {
+        min-height: 200px;
+    }
 }
