@@ -794,3 +794,67 @@ footer {
     color: var(--text-gold);
     text-decoration: underline;
 }
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    
+    .nav-links {
+        gap: 20px; 
+    }
+    
+    .nav-links a {
+        font-size: 0.8rem; 
+    }
+
+    .hero-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .hero-card.reverse {
+        flex-direction: column;
+
+    .hero-text p {
+        margin: 0 auto; 
+    }
+
+    .gameintro-section {
+        background-position: center center; 
+    }
+}
+
+@media (max-width: 768px) {
+    .logo a {
+        font-size: 1.4rem;
+    }
+
+    .nav-links {
+        display: none; 
+    }
+    
+    .gameintro-tagline {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+
+    .char-row {
+        gap: 40px;
+    }
+    
+    .char-cutout {
+        width: 150px;
+    }
+
+    .masonry-grid {
+        column-count: 1; 
+    }
+    
+    .featured-container {
+        flex-direction: column; 
+    }
+}
+}

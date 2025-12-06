@@ -61,3 +61,26 @@ function handleLogin(event) {
     // 4. Redirect to Hub (Simulated)
     window.location.href = "hub.html";
 }
+
+//---Subscription Toast Script
+function subscribe() {
+    const emailInput = document.getElementById('emailInput');
+    const toast = document.getElementById('toast-message');
+    const email = emailInput.value;
+
+    if (email.trim() === "") {
+        toast.innerText = "⚠️ Please enter a valid email address.";
+        toast.style.backgroundColor = "rgba(200, 0, 0, 0.9)"; 
+    } else {
+        toast.innerText = "✅ Subscription Successful! Welcome to Hyrule.";
+        toast.style.backgroundColor = "#333"; 
+        
+        emailInput.value = "";
+    }
+
+    toast.className = "show";
+
+    setTimeout(function(){ 
+        toast.className = toast.className.replace("show", ""); 
+    }, 3000);
+}
