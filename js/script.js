@@ -84,3 +84,12 @@ function subscribe() {
         toast.className = toast.className.replace("show", ""); 
     }, 3000);
 }
+
+//---Mobile Menu Toggle Script
+function toggleMobileMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    const hamburger = document.querySelector('.hamburger');
+    
+    // Toggle the class that makes the menu slide in
+    navLinks.classList.toggle('active');
+}
