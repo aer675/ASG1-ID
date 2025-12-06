@@ -24,9 +24,13 @@
             <div class="auth-buttons">
                 <a href="login.html" class="btn-login" style="background: white; color: black;">Login</a>
             </div>
+            <div class="hamburger" onclick="toggleMobileMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
         </nav>
     </header>
-
 <!--World Content Section -->
 <main>
         <section class="heroes-section">
@@ -96,7 +100,20 @@
             </div>
         </section>
     </main>
-
+<!--Footer Section-->
+    <footer>
+        <div class="footer-content">
+            <div class="newsletter">
+                <h3>JOIN THE HYLIA NEWSLETTER</h3>
+                <div class="input-group">
+                    <input type="email" placeholder="Enter your email..." id="emailInput">
+                    <button onclick="subscribe()">SUBSCRIBE</button>
+                </div>
+            </div>
+            <p class="copyright">© 2025 Nintendo. Student Project.</p>
+        </div>
+    </footer>
+<!---Toast Message-->
     <div id="toast-message">Subscription Successful!</div>
 </body>
 </html>

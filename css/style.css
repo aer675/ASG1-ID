@@ -1,18 +1,16 @@
-/* Custom Fonts */
+/*--- Custom Fonts --- */
 @font-face { /* Logo/title font */
     font-family: 'BotW Logo';
     src: url('fonts/zeldaserif.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
-
 @font-face { /* Main body text font */
     font-family: 'Hylia Serif';
     src: url('fonts/hylianserif.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
-
 @font-face { /* Decorative font for decoration */
     font-family: 'Sheikah';
     src: url('fonts/sheikahserif.otf') format('opentype');
@@ -20,38 +18,35 @@
     font-style: normal;
 }
 
-/* Global Variables (Colors & Fonts) */
+/* --- GLOBAL VARIABLES --- */
 :root {
     --bg-dark: #0a0a0a;         /* Dark background color */
     --text-gold: #e8dcb5;       /* Zelda gold color */
     --text-white: #ffffff;      /* White text color */
     --sheikah-blue: #4deeea;    /* Sheikah technology accent color */
-
     --font-title: 'BotW Logo', serif;
     --font-body: 'Hylia Serif', serif;
     --font-deco: 'Sheikah', serif;
 }
 
-/* Reset and Body */
+/* --- Global Styles --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     background-color: var(--bg-dark); /* Set dark background */
     color: var(--text-white);
     font-family: var(--font-body);    /* Apply main body font */
     overflow-x: hidden;               /* Prevent horizontal scroll */
 }
-
 a {
     text-decoration: none; 
     color: inherit; /* Inherit color from parent */
 }
 
-/* Navigation Bar */
+/* --- NAVBAR STYLES --- */
 .navbar {
     display: flex;
         justify-content: space-between;
@@ -65,7 +60,7 @@ a {
         z-index: 1000; 
 }
 
-/* Logo */
+/* --- LOGO STYLES --- */
 .logo {
     font-family: var(--font-title); 
     font-size: 1.8rem;           
@@ -75,13 +70,12 @@ a {
     text-shadow: 0 0 10px rgba(197, 160, 89, 0.3); 
     transition: 0.3s ease;
 }
-
 .logo a:hover {
     color: var(--text-white);
     text-shadow: 0 0 15px var(--sheikah-blue); /* Blue glow interaction */
 }
 
-/* Navigation Links */
+/* --- NAV LINKS STYLES --- */
 .nav-links {
     list-style: none;
     display: flex;
@@ -101,7 +95,7 @@ a {
     text-shadow: 0 0 8px var(--sheikah-blue);
 }
 
-/* Login Button */
+/* --- LOGIN BUTTON STYLES --- */
 .btn-login {
     font-family: var(--font-title);
     font-size: 0.8rem;
@@ -117,7 +111,7 @@ a {
     border-color: var(--text-white);
 }
 
-/* Game intro section */    
+/* --- GAME INTRO SECTION --- */
 .gameintro-section {
     height: 100vh;
     width: 100%;
@@ -137,7 +131,7 @@ a {
     animation: fadeIn 2s ease-in;
 }
 
-/* The Big Center Logo Image */
+/* --- THE BIG CENTER LOGO IMAGE --- */
 .gameintro-logo {
     width: 550px;
     max-width: 90%;
@@ -154,8 +148,7 @@ a {
     text-shadow: 0 2px 10px #000;
 }
 
-
-/* Adventure Section (Forest + Interaction) */
+/* --- ADVENTURE SECTION (FOREST + INTERACTION) --- */
 .adventure-section {
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.9)), url('../images/fanart-mainpage.jpg');
@@ -176,7 +169,7 @@ a {
     margin-bottom: 30px;
 }
 
-/* Interactive Sparkle Button */
+/* --- INTERACTIVE SPARKLE BUTTON --- */
 .sparkle-container {
     display: flex;
     flex-direction: column;
@@ -213,7 +206,7 @@ a {
     opacity: 1; /* Shows on hover */
 }
 
-/* Trailer Section */
+/* --- TRAILER SECTION --- */
 .trailer-section {
     padding: 80px 20px;
     background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.7)), url('../images/sheikah-bg.jpg');
@@ -245,7 +238,7 @@ a {
     display: block;
 }
 
-/* Footer Section */
+/* --- FOOTER SECTION --- */
 footer {
     background-color: #000;
     padding: 50px 20px;
@@ -306,7 +299,7 @@ footer {
     color: #666;
 }
 
-/* Animations */
+/* --- ANIMATIONS --- */
 @keyframes fadeIn {
     0% { opacity: 0; transform: translateY(30px); }
     100% { opacity: 1; transform: translateY(0); }
@@ -318,7 +311,7 @@ footer {
     100% { transform: scale(1); text-shadow: 0 0 10px var(--text-gold); }
 }
 
-/* World Page Styles */
+/* --- WORLD PAGE STYLES --- */
 .page-title {
     font-family: var(--font-title);
     color: var(--text-gold);
@@ -403,7 +396,6 @@ footer {
 /* --- CHAMPIONS GALLERY --- */
 .champions-gallery {
     position: relative;
-    /* Uses your specific file: sheikah-bg.jpg */
     background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.7)), url('../images/sheikah-bg.jpg');
     background-size: cover;
     background-attachment: fixed;
@@ -435,7 +427,6 @@ footer {
 .char-cutout img {
     width: 100%;
     height: auto;
-    /* Default: Blue tint / dimmed / Hologram effect */
     filter: grayscale(100%) sepia(100%) hue-rotate(170deg) brightness(0.7);
     transition: 0.4s all;
 }
@@ -448,7 +439,6 @@ footer {
     letter-spacing: 2px;
 }
 
-/* Hover Effect: Full Color & Float */
 .char-cutout:hover {
     transform: translateY(-10px);
 }
@@ -462,7 +452,7 @@ footer {
     opacity: 1;
 }
 
-/* Sheikah Panel (Hidden Info Panel) */
+/* --- SHEIKAH PANEL (HIDDEN INFO PANEL) --- */
 .sheikah-panel {
     background: rgba(0, 0, 0, 0.9);
     border: 1px solid var(--sheikah-blue);
@@ -479,7 +469,6 @@ footer {
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* Active State (Added by JS later) */
 .sheikah-panel.active {
     display: block;
     opacity: 1;
@@ -509,7 +498,7 @@ footer {
     opacity: 1;
 }
 
-/* Community hub */
+/* --- COMMUNITY HUB STYLES --- */
 .hub-header {
     text-align: center;
     padding-top: 120px;
@@ -594,7 +583,7 @@ footer {
 .post-card {
     background-color: #1a1a1a;
     border: 1px solid var(--sheikah-blue);
-    border-radius: 12px;    /* Rounded corners like your mockup */
+    border-radius: 12px;    
     overflow: hidden;
     margin-bottom: 20px;    /* Space between items vertically */
     break-inside: avoid;    /* Prevents cutting images in half */
@@ -619,7 +608,6 @@ footer {
     margin: 50px auto 80px auto; /* Spacing from grid and footer */
     max-width: 600px;
     
-    /* Box Styling */
     background-color: #111;
     border: 1px solid var(--text-gold);
     border-radius: 4px;
@@ -652,7 +640,7 @@ footer {
     transform: scale(1.05);
 }
 
-/* Maintenance Page Styles */
+/* --- MAINTENANCE PAGE STYLES --- */
 .maintenance-section {
     height: 80vh; 
     display: flex;
@@ -695,7 +683,7 @@ footer {
     100% { transform: rotate(360deg); }
 }
 
-/* Login Page Styles */
+/* --- LOGIN PAGE STYLES --- */
 .login-section {
     height: 100vh;
     display: flex;
@@ -795,7 +783,7 @@ footer {
     text-decoration: underline;
 }
 
-/* Responsive Adjustments */
+/* --- RESPONSIVE ADJUSTMENTS --- */
 @media (max-width: 1024px) {
     .navbar {
         padding: 15px 20px;
