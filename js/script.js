@@ -40,3 +40,24 @@ function showChampData(champKey) {
 
     panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
+
+//---Login Page Interaction Script
+function handleLogin(event) {
+    event.preventDefault(); // Stops the page from refreshing
+
+    // 1. Get the values
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    // 2. Check if empty
+    if (username === "" || password === "") {
+        alert("⚠️ ACCESS DENIED: Please enter both username and password.");
+        return;
+    }
+
+    // 3. Success Message
+    alert("✅ ACCESS GRANTED. Welcome back, " + username + ".");
+    
+    // 4. Redirect to Hub (Simulated)
+    window.location.href = "hub.html";
+}
