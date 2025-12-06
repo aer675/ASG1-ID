@@ -651,3 +651,46 @@ footer {
     box-shadow: 0 0 15px var(--sheikah-blue);
     transform: scale(1.05);
 }
+
+/* Maintenance Page Styles */
+.maintenance-section {
+    height: 80vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+}
+
+.maintenance-box h1 {
+    font-family: var(--font-title);
+    color: var(--text-gold);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.maintenance-box p {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+.maintenance-icon {
+    width: 80px;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.rotating {
+    animation: spin 4s linear infinite;
+}
+
+.small-text {
+    font-size: 0.9rem !important;
+    color: var(--sheikah-blue) !important;
+    margin-bottom: 40px;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
